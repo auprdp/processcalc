@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pump</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" rel="icon" sizes="512x512" href="favicon.png" />
+<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png">
+<?php require('access.php'); ?>
+<link rel="stylesheet" type="text/css" href="layout.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167521993-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167521993-1');
+</script>
+
+</head>
+
+<body>
+  
+<p></p><a href="index.html"><img src="logo_51102177.png" alt="logo" style="width:186px;height:30px;"></a></p>
+
+<div id="navbar">
+<a class="tablink" onclick="openPage('tabcontent', this, 'rgb(51,102,177)')" id="defaultOpen" Style=width:80%>Compressor</a>
+<a class="tablink" onclick="openNav()" style=width:20%>More</a>
+</div>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <?php include "menu.html"; ?>
+</div>
+
+<script src="conversion.js"></script>
+
+<div id="tabcontent" class="tabcontent">
+
+  <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search">
+
+  <button class="accordion"><a>Settleout Calculation</a></button>
+  <div class="panel">
+    <p><b>Before settleout (section 1)</b></p>
+    <table >
+      <colgroup> <col span="1" width=200px><col span="1" width=150px></colgroup>
+      <tr><td><label>Operating Pressure (PAHH)</label></td><td><label><select class="unit" id=100.04 onchange="Settleout()"><option hidden >Bar g</option></select></label></td><td><input type="number" id=100 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label></label></td><td><label><select class="unit" id=101.51 onchange="Settleout()"><option hidden >Bar a</option></select></label></td><td><span type="number" id=101>-</span></td></tr>
+      <tr><td><label>Operating Temperature</label></td><td><label><select class="unit" id=102.02 onchange="Settleout()"><option hidden >C</option></select></label></td><td><input type="number" id=102 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Compressibility Factor</label></td><td><label><select class="unit" id=103.0 onchange="Settleout()"><option hidden >-</option></select></label><td><input type="number" id=103 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Total Volume</label></td><td><label><select class="unit" id=104.1 onchange="Settleout()"><option hidden >m3</option></select></label><td><input type="number" id=104 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Number of moles</label></td><td><label><select class="unit" id=105.26 onchange="Settleout()"><option hidden >mole</option></select></label></td><td><span type="number" id=105>-</span></td></tr>
+      <tr><td><label>Volume at normal condition</label></td><td><label><select class="unit" id=106.1 onchange="Settleout()"><option hidden >m3</option></select></label><td><span type="number" id=106>-</span></td></tr>
+      <tr><td><label>ni x Ti = P*V/(Z*R)</label></td><td><label><select id=107.0 onchange="Settleout()"><option >mole.K</option></select></label><td><span type="number" id=107>-</span></td></tr>
+    </table>
+    <p><b>Before settleout (section 2)</b></p>
+    <table >
+      <colgroup> <col span="1" width=200px><col span="1" width=150px></colgroup>
+      <tr><td><label>Operating Pressure (PAHH)</label></td><td><label><select class="unit" id=110.04 onchange="Settleout()"><option hidden >Bar g</option></select></label></td><td><input type="number" id=110 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label></label></td><td><label><select class="unit" id=111.51 onchange="Settleout()"><option hidden >Bar a</option></select></label></td><td><span type="number" id=111>-</span></td></tr>
+      <tr><td><label>Operating Temperature</label></td><td><label><select class="unit" id=112.02 onchange="Settleout()"><option hidden >C</option></select></label></td><td><input type="number" id=112 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Compressibility Factor</label></td><td><label><select class="unit" id=113.0 onchange="Settleout()"><option hidden >-</option></select></label><td><input type="number" id=113 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Total Volume</label></td><td><label><select class="unit" id=114.1 onchange="Settleout()"><option hidden >m3</option></select></label><td><input type="number" id=114 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Number of moles</label></td><td><label><select class="unit" id=115.26 onchange="Settleout()"><option hidden >mole</option></select></label></td><td><span type="number" id=115>-</span></td></tr>
+      <tr><td><label>Volume at normal condition</label></td><td><label><select class="unit" id=116.1 onchange="Settleout()"><option hidden >m3</option></select></label><td><span type="number" id=116>-</span></td></tr>
+      <tr><td><label>ni x Ti = P*V/(Z*R)</label></td><td><label><select id=117.0 onchange="Settleout()"><option >mole.K</option></select></label><td><span type="number" id=117>-</span></td></tr>
+    </table>
+    <p><b>Before settleout (section 3)</b></p>
+    <table >
+      <colgroup> <col span="1" width=200px><col span="1" width=150px></colgroup>
+      <tr><td><label>Operating Pressure (PAHH)</label></td><td><label><select class="unit" id=120.04 onchange="Settleout()"><option hidden >Bar g</option></select></label></td><td><input type="number" id=120 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label></label></td><td><label><select class="unit" id=121.51 onchange="Settleout()"><option hidden >Bar a</option></select></label></td><td><span type="number" id=121>-</span></td></tr>
+      <tr><td><label>Operating Temperature</label></td><td><label><select class="unit" id=122.02 onchange="Settleout()"><option hidden >C</option></select></label></td><td><input type="number" id=122 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Compressibility Factor</label></td><td><label><select class="unit" id=123.0 onchange="Settleout()"><option hidden >-</option></select></label><td><input type="number" id=123 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Total Volume</label></td><td><label><select class="unit" id=124.1 onchange="Settleout()"><option hidden >m3</option></select></label><td><input type="number" id=124 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Number of moles</label></td><td><label><select class="unit" id=125.26 onchange="Settleout()"><option hidden >mole</option></select></label></td><td><span type="number" id=125>-</span></td></tr>
+      <tr><td><label>Volume at normal condition</label></td><td><label><select class="unit" id=126.1 onchange="Settleout()"><option hidden >m3</option></select></label><td><span type="number" id=126>-</span></td></tr>
+      <tr><td><label>ni x Ti = P*V/(Z*R)</label></td><td><label><select id=127.0 onchange="Settleout()"><option >mole.K</option></select></label><td><span type="number" id=127>-</span></td></tr>
+    </table>
+    <p><b>Before settleout (section 4)</b></p>
+    <table >
+      <colgroup> <col span="1" width=200px><col span="1" width=150px></colgroup>
+      <tr><td><label>Operating Pressure (PAHH)</label></td><td><label><select class="unit" id=130.04 onchange="Settleout()"><option hidden >Bar g</option></select></label></td><td><input type="number" id=130 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label></label></td><td><label><select class="unit" id=131.51 onchange="Settleout()"><option hidden >Bar a</option></select></label></td><td><span type="number" id=131>-</span></td></tr>
+      <tr><td><label>Operating Temperature</label></td><td><label><select class="unit" id=132.02 onchange="Settleout()"><option hidden >C</option></select></label></td><td><input type="number" id=132 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Compressibility Factor</label></td><td><label><select class="unit" id=133.0 onchange="Settleout()"><option hidden >-</option></select></label><td><input type="number" id=133 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Total Volume</label></td><td><label><select class="unit" id=134.1 onchange="Settleout()"><option hidden >m3</option></select></label><td><input type="number" id=134 placeholder="input" oninput="Settleout()" onchange="Settleout()"></td></tr>
+      <tr><td><label>Number of moles</label></td><td><label><select class="unit" id=135.26 onchange="Settleout()"><option hidden >mole</option></select></label></td><td><span type="number" id=135>-</span></td></tr>
+      <tr><td><label>Volume at normal condition</label></td><td><label><select class="unit" id=136.1 onchange="Settleout()"><option hidden >m3</option></select></label><td><span type="number" id=136>-</span></td></tr>
+      <tr><td><label>ni x Ti = P*V/(Z*R)</label></td><td><label><select id=137.0 onchange="Settleout()"><option >mole.K</option></select></label><td><span type="number" id=137>-</span></td></tr>
+    </table>
+    <p><b>After settleout (section 1-4)</b></p>
+    <table >
+      <colgroup> <col span="1" width=200px><col span="1" width=150px></colgroup>
+      <tr><td><label>Total mole</label></td><td><label><select class="unit" id=140.26 onchange="Settleout()"><option hidden >mole</option></select></label></td><td><span type="number" id=140>-</span></td></tr>
+      <tr><td><label>Total volume</label></td><td><label><select class="unit" id=141.1 onchange="Settleout()"><option hidden >m3</option></select></label></td><td><span type="number" id=141>-</span></td></tr>
+      <tr><td><label>Total volume at normal condition</label></td><td><label><select class="unit" id=142.1 onchange="Settleout()"><option hidden >m3</option></select></label></td><td><span type="number" id=142>-</span></td></tr>
+      <tr><td><label>Total ns x Ts</label></td><td><label><select id=143.0 onchange="Settleout()"><option  >mole.K</option></select></label><td><span type="number" id=143>-</span></td></tr>
+      <tr><td><label>Settle-out temperature</label></td><td><label><select class="unit" id=144.02 onchange="Settleout()"><option hidden >C</option></select></label><td><span type="number" id=144>-</span></td></tr>
+      <tr><td><label>Settle-out pressure </label></td><td><label><select class="unit" id=145.51 onchange="Settleout()"><option hidden >Bar a</option></select></label></td><td><span type="number" id=145>-</span></td></tr>
+      <tr><td><label></label></td><td><label><select class="unit" id=146.04 onchange="Settleout()"><option hidden >Bar g</option></select></label><td><span type="number" id=146>-</span></td></tr>
+    </table>
+  </div>
+  <div style="height:150px"></div> 
+</div>
+
+<div class="fab" onclick="openCalc()" style="background-color: rgb(51,102,177);"> <img src="calculate.svg" style="width:40px;height:40px;"> </div>
+<div id="myCalc" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeCalc()">&times;</a>
+  <div class="overlay-content">
+		<object data="calculator.html" width="350" height="550" ></object>
+   </div>
+</div>
+
+<script src="conversion.js"></script>
+<script src="layout.js"></script>
+<script src="calculation.js"></script>
+</body>
+</html>

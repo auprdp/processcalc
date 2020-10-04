@@ -1,0 +1,6 @@
+# Caching schema
+<FilesMatch "\.(png|html|php|js)$">
+Header set Cache-Control "proxy-revalidate, max-age=60"
+</FilesMatch>
+
+AddType application/x-httpd-php .html .htm

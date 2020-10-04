@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mathematical Calc</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" rel="icon" sizes="512x512" href="favicon.png" />
+<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png">
+<?php require('access.php'); ?>
+<link rel="stylesheet" type="text/css" href="layout.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167521993-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167521993-1');
+</script>
+
+</head>
+
+<body>
+
+<p></p><a href="index.html"><img src="logo_5151177.png" alt="logo" style="width:186px;height:30px;"></a></p>
+
+<div id="navbar">
+<a class="tablink" onclick="openPage('tabcontent', this, 'rgb(51,51,177)')" id="defaultOpen" Style=width:80%>Mathematical Calc</a>
+<a class="tablink" onclick="openNav()" style=width:20%>More</a>
+</div>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <?php include "menu.html"; ?>
+</div>
+
+<script src="conversion.js"></script>
+
+<div id="tabcontent" class="tabcontent">
+
+  <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search">
+
+<button class="accordion"><a>Interpolation/Extrapolation</a></button>
+<div class="panel">
+   <table >
+    <colgroup> <col span="1" width=200px></colgroup>
+    <tr><td><label>First Set (X1)</label></td><td><input type="number" id=100 placeholder="input" oninput="InterExtra()" onchange="InterExtra()"></td></tr>
+    <tr style="border-bottom: 1px solid #ccc"><td><label>First Set (Y1)</label></td><td><input type="number" id=101 placeholder="input" oninput="InterExtra()" onchange="InterExtra()"></td></tr>
+    <tr><td><label>Second Set (X2)</label></td><td><input type="number" id=102 placeholder="input" oninput="InterExtra()" onchange="InterExtra()"></td></tr>
+    <tr style="border-bottom: 1px solid #ccc"><td><label>Second Set (Y2)</label></td><td><input type="number" id=103 placeholder="input" oninput="InterExtra()" onchange="InterExtra()"></td></tr>
+    <tr><td><label>Third Set (X3)</label></td><td><input type="number" id=104 placeholder="input" oninput="InterExtra()" onchange="InterExtra()"></td></tr>
+    <tr style="border-bottom: 1px solid #ccc"><td><label>Third Set (Y3)</label></td><td><span type="number" id=105>-</span></td></tr>
+    <tr><td><label>Fourth Set (X4)</label></td><td><span type="number" id=106>-</span></td></tr>
+    <tr style="border-bottom: 1px solid #ccc"><td><label>Fourth Set (Y4)</label></td><td><input type="number" id=107 placeholder="input" oninput="InterExtra()" onchange="InterExtra()"></td></tr>
+  </table>
+</div>
+
+<button class="accordion"><a>Circle</a></button>
+<div class="panel">
+   <table >
+    <colgroup> <col span="1" width=200px><col span="1" width=150px></colgroup>
+    <tr><td><label>Diameter</label></td><td><label><select class="unit" id=200.01 onchange="Circle()"><option hidden >m</option></select></label></td><td><input type="number" id=200 placeholder="input" oninput="Circle()" onchange="Circle()"></td></tr>
+    <tr><td><label>Radius</label></td><td><label><select class="unit" id=201.01 onchange="Circle()"><option hidden >m</option></select></label><td><span type="number" id=201>-</span></td></tr>
+    <tr><td><label>Circumference</label></td><td><label><select class="unit" id=202.01 onchange="Circle()"><option hidden >m</option></select></label><td><span type="number" id=202>-</span></td></tr>
+    <tr><td><label>Area</label></td><td><label><select class="unit" id=203.05 onchange="Circle()"><option hidden >m2</option></select></label><td><span type="number" id=203>-</span></td></tr>
+  </table>
+</div>
+
+<button class="accordion"><a>Cylinder</a></button>
+<div class="panel">
+   <table style="table-layout: fixed;">
+    <colgroup> <col class="col" span="1"width=200px><col class="col" span="1"  width=150px></colgroup>
+    <tr><td><label>Diameter</label></td><td><select class="unit" id=300.01 onchange="Cylinder()"><option hidden >m</option></select></td><td><input type="number" id=300 placeholder="input" oninput="Cylinder()" onchange="Cylinder()"></td></tr>
+    <tr><td><label>Radius</label></td><td><select class="unit" id=301.01 onchange="Cylinder()"><option hidden>m</option></select><td><span type="number" id=301>-</span></small></td></tr>
+    <tr><td><label>Length</label></td><td><select class="unit" id=302.01 onchange="Cylinder()"><option hidden>m</option></select></td><td><input type="number" id=302 placeholder="input" oninput="Cylinder()" onchange="Cylinder()"></td></tr>
+    <tr><td><label>Surface Area</label></td><td><select class="unit" id=303.05 onchange="Cylinder()"><option hidden>m2</option></select><td><span type="number" id=303>-</span></td></tr>
+    <tr><td><label>Curved Surface Area</label></td><td><select class="unit" id=304.05 onchange="Cylinder()"><option hidden>m2</option></select><td><span type="number" id=304>-</span></td></tr>
+    <tr><td><label>Volume</label></td><td><select class="unit" id=305.1 onchange="Cylinder()"><option hidden>m3</option></select><td><span type="number" id=305>-</span></td></tr>
+  </table> 
+</div>
+<div style="height:150px"></div>
+</div>
+
+<div class="fab" onclick="openCalc()" style="background-color: rgb(51,51,177);"> <img src="calculate.svg" style="width:40px;height:40px;"> </div>
+<div id="myCalc" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeCalc()">&times;</a>
+  <div class="overlay-content">
+		<object data="calculator.html" width="350" height="550" ></object>
+   </div>
+</div>
+
+<script src="conversion.js"></script>
+<script src="layout.js"></script>
+<script src="calculation.js"></script>
+</body>
+</html>

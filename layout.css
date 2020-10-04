@@ -1,0 +1,251 @@
+
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color:white;
+    color: blue;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    right: 1px;
+  }
+  
+  span[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color:white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    right: 1px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 12px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color:white;
+    color: blue;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    right: 1px;
+  }
+  
+  label {
+    font-size: 15px;
+  }
+    
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  * {box-sizing: border-box}
+  
+  /* Set height of body and the document to 100% */
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+  
+  /* Style tab links */
+  .tablink {
+    background-color:#333;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    text-align: center;
+    box-shadow: 0 6px 10px -5px #666;
+    }
+  
+  .tablink:hover {
+    background-color: #CCC;
+    color: black;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    display: none;
+    padding: 60px 10px;
+    height: 100%;
+  }
+  
+  .overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: scroll;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay {overflow-y: auto;}
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky + .content {
+    padding-top: 60px;
+  }
+  
+  #myInput {
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    col {
+      width: 30%;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .tabcontent {
+      width: 768PX;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  .overlay {
+   
+    background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 0%, 11%, 0.03) 5px, hsla(197, 0%, 11%, 0.03) 10px,                  
+      hsla(5, 0%, 63%, 0) 10px, hsla(5, 0%, 63%, 0) 35px, hsla(5, 0%, 63%, 0.03) 35px, hsla(5, 0%, 63%, 0.03) 40px,
+      hsla(197, 0%, 11%, 0.03) 40px, hsla(197, 0%, 11%, 0.03) 50px, hsla(197, 0%, 11%, 0) 50px, hsla(197, 0%, 11%, 0) 60px,                
+      hsla(5, 0%, 63%, 0.03) 60px, hsla(5, 0%, 63%, 0.03) 70px, hsla(35, 0%, 65%, 0.03) 70px, hsla(35, 0%, 65%, 0.03) 80px,
+      hsla(35, 0%, 65%, 0) 80px, hsla(35, 0%, 65%, 0) 90px, hsla(5, 0%, 63%, 0.03) 90px, hsla(5, 0%, 63%, 0.03) 110px,
+      hsla(5, 0%, 63%, 0) 110px, hsla(5, 0%, 63%, 0) 120px, hsla(197, 0%, 11%, 0.03) 120px, hsla(197, 0%, 11%, 0.03) 140px       
+      ),
+      repeating-linear-gradient(135deg, transparent 5px, hsla(197, 0%, 11%, 0.03) 5px, hsla(197, 0%, 11%, 0.03) 10px, 
+      hsla(5, 0%, 63%, 0) 10px, hsla(5, 0%, 63%, 0) 35px, hsla(5, 0%, 63%, 0.03) 35px, hsla(5, 0%, 63%, 0.03) 40px,
+      hsla(197, 0%, 11%, 0.03) 40px, hsla(197, 0%, 11%, 0.03) 50px, hsla(197, 0%, 11%, 0) 50px, hsla(197, 0%, 11%, 0) 60px,                
+      hsla(5, 0%, 63%, 0.03) 60px, hsla(5, 0%, 63%, 0.03) 70px, hsla(35, 0%, 65%, 0.03) 70px, hsla(35, 0%, 65%, 0.03) 80px,
+      hsla(35, 0%, 65%, 0) 80px, hsla(35, 0%, 65%, 0) 90px, hsla(5, 0%, 63%, 0.03) 90px, hsla(5, 0%, 63%, 0.03) 110px,
+      hsla(5, 0%, 63%, 0) 110px, hsla(5, 0%, 63%, 0) 140px, hsla(197, 0%, 11%, 0.03) 140px, hsla(197, 0%, 11%, 0.03) 160px       
+    );
+      background-repeat: repeat-y;
+    }
+    .fab {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      transition: all 0.1s ease-in-out;
+      padding: 10px;
+      box-shadow: 0 6px 10px 0 #666;
+    
+      font-size: 30px;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+    
+      position: fixed;
+      right: 50px;
+      bottom: 50px;
+    }
+    
+    .fab:hover {
+      box-shadow: 0 6px 14px 0 #666;
+      transform: scale(1.05);
+    }

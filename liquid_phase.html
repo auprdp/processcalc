@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Liquid Phase</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" rel="icon" sizes="512x512" href="favicon.png" />
+<link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png">
+<?php require('access.php'); ?>
+<link rel="stylesheet" type="text/css" href="layout.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167521993-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167521993-1');
+</script>
+
+</head>
+
+<body>
+  
+<p></p><a href="index.html"><img src="logo_1775151.png" alt="logo" style="width:186px;height:30px;"></a></p>
+
+<div id="navbar">
+<a class="tablink" onclick="openPage('tabcontent', this, 'rgb(177,51,51)')" id="defaultOpen" Style=width:80%>Liquid Phase</a>
+<a class="tablink" onclick="openNav()" style=width:20%>More</a>
+</div>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <?php include "menu.html"; ?>
+</div>
+
+<script src="conversion.js"></script>
+
+<div id="tabcontent" class="tabcontent">
+
+  <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search">
+
+  <button class="accordion"><a>API Gravity</a></button>
+  <div class="panel">
+     <table >
+      <colgroup> <col span="1" width=200px><col span="1" width=150px></colgroup>
+      <tr><td><label>Density of crude</label></td><td><label><select class="unit" id=100.12 onchange="API()"><option hidden >kg/m3</option></select></label></td><td><input type="number" id=100 placeholder="input" oninput="API()" onchange="API()"></td></tr>
+      <tr><td><label>Density of Water</label></td><td><label><select class="unit" id=101.12 onchange="API()"><option hidden >kg/m3</option></select></label></td><td><input type="number" id=101 placeholder="input" oninput="API()" onchange="API()"></td></tr>
+      <tr><td><label>Specific Gravity</label></td><td><label><select class="unit" id=102.00 onchange="API()"><option hidden >-</option></select></label><td><span type="number" id=102>-</span></td></tr>
+      <tr><td><label>Degree API</label></td><td><label><select onchange="API()"><option hidden >-</option></select></label><td><span type="number" id=103>-</span></td></tr>
+      <tr><td><label>Nature of crude</label></td><td><label><select onchange="API()"><option hidden >-</option></select></label><td><span type="number" id=104>-</span></td></tr>
+    </table>
+  </div>
+  <div style="height:150px"></div>
+</div>
+
+<div class="fab" onclick="openCalc()" style="background-color: rgb(177,51,51);"> <img src="calculate.svg" style="width:40px;height:40px;"> </div>
+<div id="myCalc" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeCalc()">&times;</a>
+  <div class="overlay-content">
+		<object data="calculator.html" width="350" height="550" ></object>
+   </div>
+</div>
+
+<script src="conversion.js"></script>
+<script src="layout.js"></script>
+<script src="calculation.js"></script>
+</body>
+</html>
